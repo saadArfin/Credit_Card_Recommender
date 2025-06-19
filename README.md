@@ -1,38 +1,86 @@
-# Credit_Card_Recommender
+# Credit Card Recommender
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+A modern, luxury-themed credit card recommendation web app powered by Next.js (React) and FastAPI. Users interact with a conversational AI chatbot to receive personalized credit card recommendations, with a premium, accessible, and visually appealing user experience.
+
+## Features
+
+- **Conversational Chatbot UI**: Modern, luxury-inspired design with dark gradients, gold/teal/blue accents, bold fonts, and smooth animations.
+- **Personalized Recommendations**: AI-driven suggestions based on user input, fetched securely from a FastAPI backend using session-based logic.
+- **Robust Data Flow**: Recommendations are fetched using a session ID, not URL params, for security and reliability.
+- **Accessibility**: ARIA labels, keyboard navigation, and screen reader support.
+- **Branding & UX**: Custom logo, responsive layout, "Start Over" button, typing indicator, and error handling.
+- **Modern Tech Stack**: Next.js (React), TypeScript, FastAPI, Tailwind CSS, React Icons.
+
+## Tech Stack
+
+- **Frontend**: Next.js (App Router), React, TypeScript, Tailwind CSS
+- **Backend**: FastAPI (Python)
+- **Deployment**: Vercel (frontend), Render/Fly.io/Railway (backend)
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/saadArfin/Credit_Card_Recommender.git
+cd Credit_Card_Recommender/credit_card_recommender
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+### 3. Configure environment variables
+
+Create a `.env.local` file in the `credit_card_recommender` directory:
+
+```
+NEXT_PUBLIC_API_BASE_URL=https://your-fastapi-backend-url
+```
+
+Replace with your deployed FastAPI backend URL.
+
+### 4. Run the development server
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Backend Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- The FastAPI backend should be deployed separately (e.g., Render, Railway, Fly.io).
+- Ensure CORS is enabled for your frontend domain.
+- The backend must support `/chat` and `/recommend` endpoints with session-based logic.
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+### Frontend (Vercel)
+- Push your code to GitHub.
+- Import the repo in [Vercel](https://vercel.com/), set `NEXT_PUBLIC_API_BASE_URL` in project settings.
+- Deploy!
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Backend
+- Deploy FastAPI to your preferred cloud provider.
+- Update the frontend `.env.local` and Vercel environment variable to point to the backend URL.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Accessibility & UX
+- Fully keyboard accessible
+- ARIA labels and roles
+- Responsive and mobile-friendly
+- Error handling and fallback UI
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+MIT
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+**Credit Card Recommender** — A luxury fintech experience for smarter credit card choices.
