@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, useRef } from "react";
+import { Suspense, useEffect, useState, useRef } from "react";
 import { sendMessage } from "@/lib/api"; 
 import { v4 as uuidv4 } from "uuid";
 import Message from "./Message";
@@ -11,7 +11,15 @@ interface MessageType {
   text: string;
 }
 
-export default function ChatBot() {
+export default function ChatBotWrapper() {
+  return (
+    <Suspense fallback={<div>Loading chat...</div>}>
+      <ChatBot />
+    </Suspense>
+  );
+}
+
+function ChatBot() {
   const [sessionId, setSessionId] = useState("");
   const [messages, setMessages] = useState<MessageType[]>([]);
   const [input, setInput] = useState("");
