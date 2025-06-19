@@ -1,9 +1,11 @@
 "use client";
+
+import { Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getRecommendations } from "@/lib/api";
 
-export default function RecommendationsPage() {
+function RecommendationsPageInner() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [cards, setCards] = useState<Array<{
@@ -105,5 +107,13 @@ export default function RecommendationsPage() {
       </div>
       <button className="mt-16 bg-[#185a9d] hover:bg-[#43cea2] text-white px-10 py-4 rounded-xl font-extrabold text-lg shadow-lg tracking-wide" onClick={() => router.push("/")}>Back to Chat</button>
     </div>
+  );
+}
+
+export default function RecommendationsPage() {
+  return (
+    <Suspense fallback={<div>Loading recommendations...</div>}>
+      <RecommendationsPageInner />
+    </Suspense>
   );
 }
