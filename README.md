@@ -3,6 +3,11 @@
 ## 🚀 Demo
 
 ![Chat Demo](demo/demo_part_1.gif)
+
+<p style="margin: 24px 0;"></p>
+
+**The following demo is a continuation of the first one:**
+
 ![Recommendations Demo](demo/demo_part_2.gif)
 
 ---
