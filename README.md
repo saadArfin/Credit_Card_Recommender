@@ -1,10 +1,9 @@
 # Credit Card Recommender – Full Stack Overview (Next.js Frontend + FastAPI Backend)
 
-## 🌐 Live Demo
+## 🚀 Live Demo
 
-
+**Link to the deployed app:**
 [https://credit-card-recommender-six.vercel.app/](https://credit-card-recommender-six.vercel.app/)
-
 
 ## 🚀 Demo
 
