@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
-import { getRecommendations, sendMessage } from "@/lib/api"; 
+import { sendMessage } from "@/lib/api"; 
 import { v4 as uuidv4 } from "uuid";
 import Message from "./Message";
 import { useRouter, useSearchParams } from "next/navigation";
