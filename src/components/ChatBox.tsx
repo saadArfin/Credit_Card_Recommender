@@ -116,22 +116,21 @@ function ChatBot() {
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-[#232526] to-[#414345] flex flex-col items-center justify-center px-2 sm:px-0">
-
-      <h1 className="w-full text-4xl sm:text-6xl font-black text-center pt-4 pb-4 text-[#FFD700] drop-shadow-2xl tracking-widest select-none flex items-center justify-center gap-4 font-['Montserrat',_cursive]">
-        <img src="/file.svg" alt="App Logo" className="h-12 w-12 mr-2" aria-hidden="true" />
-        <span tabIndex={0} aria-label="Credit Card Chat Assistant">Credit Card Chat Assistant</span>
-      </h1>
+      <div className="w-full flex flex-col items-center justify-center pt-4 pb-2 gap-2">
+        <button
+          onClick={handleRestart}
+          className="flex items-center gap-2 bg-[#232526] border border-[#393e46] text-[#FFD700] px-4 py-2 rounded-lg shadow hover:bg-[#393e46] transition text-base font-bold mb-2"
+          title="Restart Chat"
+          aria-label="Restart chat"
+        >
+          <FaRedo className="animate-spin-slow" aria-hidden="true" /> Start Over
+        </button>
+        <h1 className="text-4xl sm:text-6xl font-black text-center text-[#FFD700] drop-shadow-2xl tracking-widest select-none flex items-center gap-4 font-['Montserrat',_cursive]">
+          <img src="/file.svg" alt="App Logo" className="h-12 w-12 mr-2" aria-hidden="true" />
+          <span tabIndex={0} aria-label="Credit Card Recommender">Credit Card Recommender</span>
+        </h1>
+      </div>
       <div className="w-full max-w-2xl mx-auto p-4 sm:p-8 bg-gradient-to-br from-[#232526] to-[#414345] shadow-2xl rounded-3xl border border-[#232526] min-h-[70vh] flex flex-col relative" role="main" aria-label="Chat interface">
-        <div className="absolute top-4 right-4 z-10">
-          <button
-            onClick={handleRestart}
-            className="flex items-center gap-2 bg-[#232526] border border-[#393e46] text-[#FFD700] px-4 py-2 rounded-lg shadow hover:bg-[#393e46] transition text-base font-bold"
-            title="Restart Chat"
-            aria-label="Restart chat"
-          >
-            <FaRedo className="animate-spin-slow" aria-hidden="true" /> Start Over
-          </button>
-        </div>
         <div className="mb-8 text-center">
           <p className="text-lg sm:text-xl font-semibold text-[#43cea2] tracking-wide">
             Let me help you find the perfect credit card, personalized just for you!
