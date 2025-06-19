@@ -1,5 +1,12 @@
 # Credit Card Recommender – Frontend (Next.js)
 
+## 🚀 Demo
+
+![Chat Demo](demo/demo_part_1.gif)
+![Recommendations Demo](demo/demo_part_2.gif)
+
+---
+
 A modern, agent-powered web app that guides users through a personalized Q&A journey and recommends the best-fit Indian credit cards using an LLM-powered backend agent (Gemini) and a curated card database. Built with Next.js, this frontend delivers a luxury fintech experience with a conversational UI, robust data flow, and seamless integration with the backend.
 
 ---
