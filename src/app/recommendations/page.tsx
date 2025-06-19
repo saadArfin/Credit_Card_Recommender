@@ -77,6 +77,7 @@ function RecommendationsPageInner() {
               {card.llm_reason && (
                 <p className="text-base text-[#43cea2] mb-2 text-center font-semibold">{card.llm_reason}</p>
               )}
+              {/*
               {card.reward_simulation && (
                 <div className="mb-2 text-center">
                   <span className="text-sm text-[#FFD700] font-bold">Reward Simulation:</span>
@@ -93,6 +94,7 @@ function RecommendationsPageInner() {
                   </ul>
                 </div>
               )}
+              */}
               <a
                 href={card.apply_link}
                 target="_blank"

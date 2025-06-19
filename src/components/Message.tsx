@@ -1,32 +1,3 @@
-// interface MessageProps {
-//   sender: "user" | "bot";
-//   text: string;
-// }
-
-// export default function Message({ sender, text }: MessageProps) {
-//   return (
-//     <div className={`p-3 my-2 rounded-lg max-w-md ${sender === "user" ? "bg-blue-100 ml-auto" : "bg-gray-100 mr-auto"}`}>
-//       <p className="text-sm text-gray-800 whitespace-pre-wrap">{text}</p>
-//     </div>
-//   );
-// }
-
-// src/app/components/Message.tsx
-// export default function Message({ sender, text }: { sender: "user" | "bot"; text: string }) {
-//   const isUser = sender === "user";
-//   return (
-//     <div className={`my-2 ${isUser ? "text-right" : "text-left"}`}>
-//       <span className={`inline-block px-4 py-2 rounded ${isUser ? "bg-blue-500 text-white" : "bg-gray-200"}`}>
-//         {text}
-//       </span>
-//     </div>
-//   );
-// }
-
-
-
-
-
 import React from "react";
 
 interface MessageProps {
