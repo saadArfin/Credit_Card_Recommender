@@ -11,7 +11,7 @@
 // }
 
 // src/app/api.ts
-const BASE_URL = "http://localhost:8000"; // adjust if deployed
+const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000"; // loaded from env for deployment
 
 export async function sendMessage(sessionId: string, userInput: string) {
   const res = await fetch(`${BASE_URL}/chat`, {
@@ -26,7 +26,7 @@ export async function sendMessage(sessionId: string, userInput: string) {
 
 // Add this function to call FastAPI backend for recommendations
 export async function getRecommendations(session_id: string, top_k: number = 3) {
-  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000"}/recommend?session_id=${encodeURIComponent(session_id)}&top_k=${top_k}`;
+  const url = `${BASE_URL}/recommend?session_id=${encodeURIComponent(session_id)}&top_k=${top_k}`;
   const res = await fetch(url, {
     method: "POST", // or "GET" if your backend allows
     headers: { "Content-Type": "application/json" },
