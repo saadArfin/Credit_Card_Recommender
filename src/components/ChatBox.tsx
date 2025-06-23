@@ -28,6 +28,7 @@ function ChatBot() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
 
   // If redirected back from recommendations, show a message
   useEffect(() => {
@@ -58,6 +59,13 @@ function ChatBot() {
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
+
+  // Focus the input textarea when the bot stops typing
+  useEffect(() => {
+    if (!isTyping && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isTyping]);
 
   // Handle sending user message and bot reply
   const handleSend = async () => {
@@ -125,8 +133,10 @@ function ChatBot() {
         >
           <FaRedo className="animate-spin-slow" aria-hidden="true" /> Start Over
         </button>
-        <h1 className="text-4xl sm:text-6xl font-black text-center text-[#FFD700] drop-shadow-2xl tracking-widest select-none flex items-center gap-4 font-['Montserrat',_cursive]">
-          <img src="/file.svg" alt="App Logo" className="h-12 w-12 mr-2" aria-hidden="true" />
+        <h1
+          className="text-2xl sm:text-4xl md:text-6xl font-black text-center text-[#FFD700] drop-shadow-2xl tracking-widest select-none flex flex-wrap items-center justify-center gap-2 sm:gap-4 font-['Montserrat',_cursive] break-words w-full px-2 sm:px-0"
+        >
+          <img src="/file.svg" alt="App Logo" className="h-8 w-8 sm:h-12 sm:w-12 mr-2" aria-hidden="true" />
           <span tabIndex={0} aria-label="Credit Card Recommender">Credit Card Recommender</span>
         </h1>
       </div>
@@ -178,6 +188,7 @@ function ChatBot() {
         </div>
         <form className="flex mt-8 sm:mt-16 gap-3 flex-col sm:flex-row" role="search" aria-label="Send a message to the assistant" onSubmit={e => { e.preventDefault(); handleSend(); }}>
           <textarea
+            ref={inputRef}
             className="flex-1 border border-[#232526] bg-[#232526] text-[#FFD700] px-5 py-4 rounded-xl shadow focus:outline-none focus:ring-2 focus:ring-[#43cea2] text-lg placeholder-[#bdbdbd] disabled:opacity-60 resize-none min-h-[3.5rem] max-h-32"
             value={input}
             onChange={e => setInput(e.target.value)}
